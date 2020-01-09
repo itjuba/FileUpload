@@ -1,0 +1,26 @@
+<%- include('adminheader'); %>
+<br> <br> <br >
+<div class="container">
+
+    <a href="/admin/category/" class="btn btn-primary"> Back to Category </a>
+
+    <br> <br>
+<form action="/admin/category/add_category" method="post">
+    <div class="form-group">
+        <label>Title</label>
+        <input type="text" class="form-control" name="title" value="<%= title%>">
+    </div>
+
+
+    <button type="submit" class="btn btn-warning btn">Add Category</button>
+</form>
+
+
+</div>
+
+
+<!--<script>-->
+<!--    CKEDITOR.replace("ta");-->
+<!--</script>-->
+
+<%- include('adminfooter.ejs'); %>
