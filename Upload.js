@@ -10,11 +10,11 @@ app.locals.message ;
 app.use(session({
     secret: 'keyboard cat',
     resave:true ,
-    // cookie: { maxAge: 60000  , secure : true },
+    cookie: { maxAge: 60000  , secure : true },
     saveUninitialized: true
 }));
 
-
+app.use(express.static('./public'));
 
 app.use(require('connect-flash')());
 app.use(function (req, res, next) {
@@ -79,7 +79,7 @@ app.get('/', (req, res) =>{
 checks = [check('title','title should not be empty ').notEmpty,
          check('description','description should not be empty ').notEmpty ]
 
-app.post('/upload'  ,checks,(req, res) => {
+app.post('/upload' ,(req, res) => {
     upload(req, res, (err) => {
         if(err){
             res.render('index', {
